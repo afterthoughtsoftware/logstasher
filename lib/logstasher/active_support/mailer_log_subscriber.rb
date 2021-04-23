@@ -6,7 +6,7 @@ require 'active_support/log_subscriber'
 module LogStasher
   module ActiveSupport
     class MailerLogSubscriber < ::ActiveSupport::LogSubscriber
-      MAILER_FIELDS = %i[mailer action message_id from to bcc].freeze
+      MAILER_FIELDS = %i[mailer action message_id from to bcc subject].freeze
 
       def deliver(event)
         process_event(event, %w[mailer deliver])
